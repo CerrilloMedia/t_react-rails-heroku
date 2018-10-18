@@ -24,33 +24,33 @@ class EditListForm extends Component {
 
   render() {
     return(
-      <form onSubmit={this.handleSubmit}>
-        <div className="col-12 col-sm-8 offset-sm-2">Editing #{this.state.id}
-        <div className="input-group py-1">
-          <div className="input-group-prepend">
-          <span className="input-group-text">Title</span>
+      <form onSubmit={this.handleSubmit} className=" col-12 col-sm-8 offset-sm-2">
+        <div className="card-body border">Editing #{this.state.id}
+          <div className="input-group py-1">
+            <div className="input-group-prepend">
+            <span className="input-group-text">Title</span>
+            </div>
+            <input  name="title"
+                    type="text"
+                    placeholder="Title.."
+                    value={this.state.title} // value should already be present when editing
+                    onChange={this.handleChange}
+                    className="form-control"
+                    autofocus='true' />
           </div>
-          <input  name="title"
-                  type="text"
-                  placeholder="Title.."
-                  value={this.state.title} // value should already be present when editing
-                  onChange={this.handleChange}
-                  className="form-control" />
+          <div className="input-group py-1">
+            <div className="input-group-prepend">
+              <span className="input-group-text">Excerpt</span>
+            </div>
+            <input  name="excerpt"
+                    type="text"
+                    placeholder="Excerpt.."
+                    value={this.state.excerpt} // value should already be present when editing
+                    onChange={this.handleChange}
+                    className="form-control" />
+          </div>
+          <button className="btn btn-outline-success">Update List</button>
         </div>
-      <div className="input-group py-1">
-        <div className="input-group-prepend">
-          <span className="input-group-text">Excerpt</span>
-        </div>
-        <input  name="excerpt"
-                type="text"
-                placeholder="Excerpt.."
-                value={this.state.excerpt} // value should already be present when editing
-                onChange={this.handleChange}
-                className="form-control" />
-      </div>
-        <button className="btn btn-outline-success">Update List</button>
-        </div>
-        <hr />
       </form>
     )
   }
